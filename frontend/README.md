@@ -1,4 +1,4 @@
-# tmeicapsule-2017-frontend
+# timecapsule_2017
 
 > A Vue.js project
 

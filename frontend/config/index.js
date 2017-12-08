@@ -10,7 +10,20 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: process.env.npm_config_backend || 'https://dev.itmelove.com/2017_tc/',
+        changeOrigin: true,
+        pathRewrite: {
+        }
+      },
+      '/voice': {
+        target: process.env.npm_config_backend || 'https://dev.itmelove.com/2017_tc/',
+        changeOrigin: true,
+        pathRewrite: {
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -55,13 +68,13 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../../'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

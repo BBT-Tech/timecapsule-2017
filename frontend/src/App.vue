@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="background"></div>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -12,12 +14,26 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+
+}
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-image: url(./assets/bg.png);
+    background-size: cover;
+    background-position: top;
 }
 </style>
