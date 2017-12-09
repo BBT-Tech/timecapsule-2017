@@ -33,5 +33,6 @@ export default {
   background-image: url(../assets/bg_letter.png);
   background-repeat: repeat-y;
   background-position: top;
+  word-break: break-all;
 }
 </style>
