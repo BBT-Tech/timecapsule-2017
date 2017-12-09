@@ -1,5 +1,6 @@
 <template>
-<div class="center">
+<div class="no-tizi">
+<div class="center ">
   <audio :src="Data.voice" preload="preload" ref="audio"></audio>
   <div class="green">
     <p>你收到的是一段语音</p>
@@ -7,6 +8,8 @@
     <button @click="control" class="voice-button" :class="{'pause-button':isPlaying, 'play-button':!isPlaying}"></button>
   </div>
 </div>
+</div>
+
 </template>
 
 <script>
@@ -60,8 +63,8 @@ p {
   background:none;
   outline:none;
   border:0px;
-  width: 7.71875em;
-  height: 7.71875em;
+  width: 10.71875em;
+  height: 10.71875em;
   margin-top:4em;
   padding: 0;
   background-size: cover;
@@ -71,5 +74,11 @@ p {
 }
 .pause-button {
   background-image: url(../assets/pause.png);
+}
+.no-tizi {
+  min-height: 100%;
+  background-image: url(../assets/bg_letter.png);
+  background-repeat: repeat-y;
+  background-position: top;
 }
 </style>
