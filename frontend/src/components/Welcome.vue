@@ -5,7 +5,7 @@
       <p>马上输入兑换码查看吧</p>
       <input type="text" class="input-text green" v-model.trim="code"/>
       <p class="error-noticer" >{{errorInfo}}</p>
-      <button class="submit-button" @click="getLetter" ref="submit_button">提交</button>
+      <button class="submit-button" @click="getLetter" ref="submit_button"><span ref="submit_button_text">提交</span></button>
     </div>
 
   </div>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     getLetter () {
-      this.$refs.submit_button.innerHTML = '梯仔取信中'
+      this.$refs.submit_button_text.innerHTML = '梯仔取信中'
       getLetter(this.code).then(r => {
         switch (parseInt(r.error)) {
           case 0:
@@ -43,16 +43,16 @@ export default {
             break
           case 404:
             this.errorInfo = '输入的兑换码不对哦'
-            this.$refs.submit_button.innerHTML = '提交'
+            this.$refs.submit_button_text.innerHTML = '提交'
             break
           default:
             this.errorInfo = '网络出了点问题哦，请重试'
-            this.$refs.submit_button.innerHTML = '提交'
+            this.$refs.submit_button_text.innerHTML = '提交'
             break
         }
       })
       .catch((r) => {
-        this.$refs.submit_button.innerHTML = '提交'
+        this.$refs.submit_button_text.innerHTML = '提交'
       })
     }
   },
@@ -83,9 +83,11 @@ p {
   opacity: 0.87;
 }
 input{
+  -webkit-appearance:none;
    background:none;
    outline:none;
    border:0px;
+   border-radius: 0;
 }
 .input-text{
   margin-top: 1.25em;
@@ -111,10 +113,14 @@ input{
   border-radius: 4px;
   background-color: #409d49;
   line-height: 2.375em;
+  height: 2.375em;
   font-size: 1em;
   color: #ffffff;
-  opacity: 0.87;
+
   margin-top: 2.75em;
-  width: 6.25em;
+  min-width: 6.25em;
+}
+.submit-button > span {
+  opacity: 0.87;
 }
 </style>

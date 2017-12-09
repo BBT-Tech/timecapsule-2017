@@ -4,7 +4,7 @@
   <div class="green">
     <p>你收到的是一段语音</p>
     <p>马上点击播放吧</p>
-    <button @click="control">{{isPlaying?'暂停':'播放'}}</button>
+    <button @click="control" class="voice-button" :class="{'pause-button':isPlaying, 'play-button':!isPlaying}"></button>
   </div>
 </div>
 </template>
@@ -54,5 +54,22 @@ p {
 .green {
   color: #248f2e;
   opacity: 0.87;
+}
+.voice-button {
+  -webkit-appearance:none;
+  background:none;
+  outline:none;
+  border:0px;
+  width: 7.71875em;
+  height: 7.71875em;
+  margin-top:4em;
+  padding: 0;
+  background-size: cover;
+}
+.play-button {
+  background-image: url(../assets/play.png);
+}
+.pause-button {
+  background-image: url(../assets/pause.png);
 }
 </style>

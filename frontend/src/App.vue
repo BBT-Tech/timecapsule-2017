@@ -34,6 +34,10 @@ body {
     width: 100%;
     background-image: url(./assets/bg.png);
     background-size: cover;
-    background-position: top;
+    background-position: bottom;
+}
+#app {
+  height: 100%;
+  width: 100%;
 }
 </style>

@@ -26,6 +26,12 @@ export default {
 .content {
   font-size: 1em;
   line-height: 2em;
-  padding: 0.5em;
+  padding: 2em 2em 0 2em;
+  text-align:justify;
+  hyphens: auto;
+  min-height: 100%;
+  background-image: url(../assets/bg_letter.png);
+  background-repeat: repeat-y;
+  background-position: top;
 }
 </style>
